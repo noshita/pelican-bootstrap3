@@ -1,7 +1,36 @@
-{% extends "article_list.html" %}
+{% extends "base.html" %}
 
 {% block canonical_rel %}<link rel="canonical" href="{{ SITEURL }}">{% endblock %}
 
 {% block banner %}
 	{% include 'includes/banner.html' %}
+{% endblock %}
+
+
+{% block content %}
+    <section id="content">
+    	<h1>Koji NOSHITA</h1>
+
+        <h2>What's New</h2>
+        <div id="archives">
+        	<table>
+            {% for article in dates %}
+            {% if NEWS_TAG in article.tags %}
+                <p>
+                    <tr><td><span class="categories-timestamp" style = "font-size:medium"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span></td>
+                    <td><a href="{{ SITEURL }}/{{ article.url }}" style = "font-size:medium">{{ article.title }}{% if article.subtitle %} - {{ article.subtitle }}{% endif %}</a></td></tr>
+                    <tr><td></td><td>{{ article.summary }}</td></tr>
+                </p>
+            {% endif %}
+            {% endfor %}
+            </table>
+        </div>
+
+        <h2>予定</h2>
+    	{% for article in dates %}
+    	{% if article.title == EVENTS_TITLE %}
+    		{{ article.content }}
+    	{% endif %}
+    	{% endfor %}
+    </section>
 {% endblock %}
