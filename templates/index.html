@@ -26,10 +26,10 @@
             </table>
         </div>
 
-        <h2>予定</h2>
-    	{% for article in dates %}
-    	{% if article.title == EVENTS_TITLE %}
-    		{{ article.content }}
+    	{% for page in pages %}
+    	{% if page.title == ACTIVITIES_TITLE %}
+            <h2>{{ page.title }}</h2>
+    		{{ page.content }}
     	{% endif %}
     	{% endfor %}
     </section>
