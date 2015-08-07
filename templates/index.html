@@ -27,8 +27,7 @@
         </div>
 
     	{% for page in pages %}
-    	{% if page.title == ACTIVITIES_TITLE %}
-            <h2>{{ page.title }}</h2>
+    	{% if page.slug == ACTIVITIES_SLUG %}
     		{{ page.content }}
     	{% endif %}
     	{% endfor %}
