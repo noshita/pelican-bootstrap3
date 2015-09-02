@@ -16,15 +16,9 @@
         	<table>
             {% for article in dates %}
             {% if NEWS_TAG in article.tags %}
-<<<<<<< HEAD
-                    <tr><td><span class="categories-timestamp" style = "font-size:medium"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span></td>
-                    <td><a href="{{ SITEURL }}/{{ article.url }}" style = "font-size:medium">{{ article.title }}{% if article.subtitle %} - {{ article.subtitle }}{% endif %}</a></td></tr>
-                    <tr><td></td><td>{{ article.summary }}</td></tr>
-=======
                 <tr><td><span class="categories-timestamp" style = "font-size:medium"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span></td>
                 <td><a href="{{ SITEURL }}/{{ article.url }}" style = "font-size:medium">{{ article.title }}{% if article.subtitle %} - {{ article.subtitle }}{% endif %}</a></td></tr>
                 <tr><td></td><td>{{ article.summary }}</td></tr>
->>>>>>> origin/master
             {% endif %}
             {% endfor %}
             </table>
