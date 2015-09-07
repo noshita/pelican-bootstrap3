@@ -14,7 +14,7 @@
         <h2>What's New</h2>
         <br />
         <div id="archives">
-        	<table summary = "お知らせ">
+        	<table>
             {% for article in dates %}
             {% if NEWS_TAG in article.tags %}
                 <tr><td><span class="categories-timestamp" style = "font-size:large"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span></td>
