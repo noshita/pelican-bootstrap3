@@ -1,0 +1,40 @@
+/* Small devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  /* Fix Bootstrap dropdown to work on hover*/
+  ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+  }
+}
+
+/* Small devices (tablets, 768px and up)*/
+/*@media (max-width: 768px) {
+  ul.nav li.dropdown > ul.dropdown-menu {
+    display: inline;
+  }
+}*/
+
+@media (max-width:767px){
+    ul.nav > li.dropdown > .dropdown-menu{
+        display: block;
+        position: relative;
+        background-color:transparent;
+        border:0 none;
+        box-shadow:none;
+        margin-top:0;
+        width:100%;
+    }
+    ul.nav > li.dropdown > .dropdown-menu:hover{
+		color:#000000;
+    }
+    .navbar-nav .dropdown-menu > li > a, 
+    .navbar-nav .dropdown-menu .dropdown-header {
+        padding:0px 15px 10px 25px;
+    }
+    .navbar-default .navbar-nav .dropdown-menu > li > a{
+        
+        color:#777;
+    }
+ a.dropdown-toggle .caret {
+    display: none;
+}   
+}
