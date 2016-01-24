@@ -148,7 +148,7 @@
                                 <li><a href="{{ linkN }}">{{ titleN }}</a></li>
                                 {% elif linkN is iterable %}
                                     <li class="dropdown-submenu">
-                                        <a href="{{ linkN[0] }}" class="dropdown-toggle disabled" data-toggle="dropdown">{{ titleN }} <span class="caret"></span></a>
+                                        <a href="{{ linkN[0] }}" class="dropdown-toggle disabled" data-toggle="dropdown">{{ titleN }} </a>
                                         <ul class="dropdown-menu">
                                             {{ loop(linkN[1:]) }}
                                         </ul>
