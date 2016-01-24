@@ -150,7 +150,7 @@
                         {% endif %}
                     {% endfor %}
                 {% endmacro %}
-                {%from "." import generateNestedNavi %}
+                {%from "./base.html" import generateNestedNavi %}
                 {{generatedNestedNavi(MENUITEMS)}}
                 {% if DISPLAY_PAGES_ON_MENU %}
                     {% for p in PAGES %}
