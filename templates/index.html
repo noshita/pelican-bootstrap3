@@ -11,6 +11,7 @@
     <section id="content">
     	<h1>{{ SITENAME }}</h1>
 
+<<<<<<< HEAD
         <h2>
         {% if NEWSNAME %}
             {{NEWSNAME}}
@@ -18,17 +19,21 @@
             What's New
         {% endif %}
         </h2>
+=======
+        <h2>What's New</h2>
+        <br />
+>>>>>>> origin/master
         <div id="archives">
         	<table>
             {% for article in dates %}
-            {% if NEWS_TAG in article.tags %}
-                <tr><td><span class="categories-timestamp" style = "font-size:medium"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span></td>
-                <td><a href="{{ SITEURL }}/{{ article.url }}" style = "font-size:medium">{{ article.title }}{% if article.subtitle %} - {{ article.subtitle }}{% endif %}</a></td></tr>
+            {% if article.category in NEWS_CATEGORY %}
+                <tr><td><span class="categories-timestamp" style = "font-size:large"><time datetime="{{ article.date.isoformat() }}"> {{ article.date|strftime('%a, %b %d %Y') }} </time></span></td>
+                <td><a href="{{ SITEURL }}/{{ article.url }}" style = "font-size:large">{{ article.title }}{% if article.subtitle %} - {{ article.subtitle }}{% endif %}</a></td></tr>
                 <tr><td></td><td>{{ article.summary }}</td></tr>
             {% endif %}
             {% endfor %}
             </table>
-        </div>
+        </div><br />
 
     	{% for page in pages %}
     	{% if page.slug == ACTIVITIES_SLUG %}
