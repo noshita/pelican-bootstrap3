@@ -144,7 +144,7 @@
                         <a href="{{ link[0] }}" class="dropdown-toggle disabled" data-toggle="dropdown">{{ title }} <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             {% for titleN, linkN in link[1:] recursive %}
-                                {% if link is string %}
+                                {% if linkN is string %}
                                 <li><a href="{{ linkN }}">{{ titleN }}</a></li>
                                 {% elif linkN is iterable %}
                                     <li class="dropdown-submenu">
