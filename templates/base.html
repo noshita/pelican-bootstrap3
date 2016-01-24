@@ -136,22 +136,20 @@
                     <li><a href="{{ link }}">{{ title }}</a></li>
                 {% endfor %}
                 -->
-                {% macro generateNestedNavi(menuList) %}
-                    {% for title, link in menuList %}
-                        {% if link is string %}
-                        <li><a href="{{ link }}">{{ title }}</a></li>
-                        {% elif link is iterable %}
-                            <li class="dropdown">
-                            <a href="{{ link[0] }}" class="dropdown-toggle disabled" data-toggle="dropdown">{{ title }} <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                {{ generateNestedNavi(link[1:]) }}
-                            </ul>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                {% endmacro %}
-                {%from "./base.html" import generateNestedNavi %}
-                {{generatedNestedNavi(MENUITEMS)}}
+
+                {% for title, link in MENUITEMS recursive %}
+                    {% if link is string %}
+                    <li><a href="{{ link }}">{{ title }}</a></li>
+                    {% elif link is iterable %}
+                        <li class="dropdown">
+                        <a href="{{ link[0] }}" class="dropdown-toggle disabled" data-toggle="dropdown">{{ title }} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            {{ loop(link[1:]) }}
+                        </ul>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
                 {% if DISPLAY_PAGES_ON_MENU %}
                     {% for p in PAGES %}
                          <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">
