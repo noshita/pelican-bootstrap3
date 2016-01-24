@@ -9,9 +9,15 @@
 
 {% block content %}
     <section id="content">
-    	<h1>Koji NOSHITA</h1>
+    	<h1>{{ SITENAME }}</h1>
 
-        <h2>What's New</h2>
+        <h2>
+        {% if NEWSNAME %}
+            {{NEWSNAME}}
+        {% else %}
+            What's New
+        {% endif %}
+        </h2>
         <div id="archives">
         	<table>
             {% for article in dates %}
